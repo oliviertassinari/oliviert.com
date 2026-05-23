@@ -1,0 +1,60 @@
+.aboutBody {
+	font-size: 15px;
+	line-height: 1.7;
+	color: var(--fg-subtle);
+}
+
+.aboutBody p {
+	margin: 0 0 12px;
+}
+
+.aboutBody strong {
+	color: var(--fg);
+	font-weight: 600;
+}
+
+.aboutExtra {
+	padding-top: 4px;
+}
+
+.AboutToggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	margin-top: 4px;
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--fg);
+	border-radius: 6px;
+	padding: 4px 8px;
+	margin-left: -8px;
+	transition: background-color 150ms ease;
+}
+
+.AboutToggle:hover {
+	background: var(--zinc-100);
+}
+
+:global(.dark) .AboutToggle:hover {
+	background: var(--zinc-800);
+}
+
+.aboutToggleHide {
+	display: none;
+}
+
+.AboutToggle[data-panel-open] .aboutToggleShow {
+	display: none;
+}
+
+.AboutToggle[data-panel-open] .aboutToggleHide {
+	display: inline;
+}
+
+.aboutToggleIcon {
+	transition: transform 200ms ease;
+}
+
+.AboutToggle[data-panel-open] .aboutToggleIcon {
+	transform: rotate(180deg);
+}

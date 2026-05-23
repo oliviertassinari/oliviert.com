@@ -1,0 +1,156 @@
+:root {
+  --zinc-50: #fafafa;
+  --zinc-100: #f4f4f5;
+  --zinc-200: #e4e4e7;
+  --zinc-300: #d4d4d8;
+  --zinc-400: #a1a1aa;
+  --zinc-500: #71717a;
+  --zinc-600: #52525b;
+  --zinc-700: #3f3f46;
+  --zinc-800: #27272a;
+  --zinc-900: #18181b;
+  --zinc-950: #09090b;
+
+  --bg: #fff;
+  --bg-card: #fff;
+  --fg: var(--zinc-950);
+  --fg-muted: var(--zinc-500);
+  --fg-subtle: var(--zinc-600);
+  --border: var(--zinc-200);
+  --border-strong: var(--zinc-300);
+  --accent: var(--zinc-900);
+  --ring: rgba(9, 9, 11, 0.12);
+
+  color-scheme: light;
+}
+
+html.dark {
+  --bg: var(--zinc-950);
+  --bg-card: var(--zinc-900);
+  --fg: var(--zinc-50);
+  --fg-muted: var(--zinc-400);
+  --fg-subtle: var(--zinc-300);
+  --border: var(--zinc-800);
+  --border-strong: var(--zinc-700);
+  --accent: var(--zinc-50);
+  --ring: rgba(250, 250, 250, 0.12);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 30px 24px 96px;
+}
+
+@media (min-width: 640px) {
+  .page {
+    padding: 64px 32px 120px;
+  }
+}
+
+.section {
+  margin-top: 48px;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+  margin: 0 0 16px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  border: 0;
+  margin: 0;
+}
+
+.muted {
+  color: var(--fg-muted);
+}
+
+/* Base UI tooltip popup */
+.tooltip-popup {
+  background: var(--zinc-900);
+  color: var(--zinc-50);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform-origin: var(--transform-origin);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+html.dark .tooltip-popup {
+  background: var(--zinc-100);
+  color: var(--zinc-900);
+}
+
+.tooltip-popup[data-starting-style],
+.tooltip-popup[data-ending-style] {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* Base UI collapsible panel */
+.collapsible-panel {
+  overflow: hidden;
+  height: var(--collapsible-panel-height);
+  transition: height 200ms ease;
+}
+
+.collapsible-panel[data-starting-style],
+.collapsible-panel[data-ending-style] {
+  height: 0;
+}

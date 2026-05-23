@@ -1,0 +1,8 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "oliviertassinari-com"
+# Build Command: npm run build
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-05-23"
+
+[vars]
+# Add your environment variables here

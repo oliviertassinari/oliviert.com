@@ -9,4 +9,7 @@ export default defineConfig({
     enabled: false
   },
 	integrations: [react()],
+  build: {
+    inlineStylesheets: 'always',
+  },
 });

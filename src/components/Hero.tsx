@@ -8,6 +8,7 @@ import {
 	BriefcaseIcon,
 } from './icons';
 import styles from './Hero.module.css';
+import { getCloudflareImage, getSrcSet } from '../utils';
 
 const socials = [
 	{ label: 'GitHub', href: 'https://github.com/oliviertassinari', Icon: GithubIcon },
@@ -16,11 +17,14 @@ const socials = [
 ];
 
 export default function Hero() {
+	const avatarUrl = 'https://avatars.githubusercontent.com/u/3165635';
+
 	return (
 		<header className={styles.Hero}>
 			<div className={styles.heroAvatar} aria-hidden="true">
 				<img
-					src="https://avatars.githubusercontent.com/u/3165635"
+					src={getCloudflareImage(avatarUrl, 80)}
+					srcSet={getSrcSet(avatarUrl, 80)}
 					alt=""
 					width="80"
 					height="80"
@@ -31,7 +35,7 @@ export default function Hero() {
 			<ul className={styles.heroMeta}>
 				<li>
 					<BriefcaseIcon size={14} aria-hidden="true" />
-					Co-founder & CEO at MUI
+					CEO & Co-founder at MUI
 				</li>
 				<li>
 					<MapPinIcon size={14} aria-hidden="true" />

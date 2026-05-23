@@ -1,0 +1,100 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<title>404: Not Found — Olivier Tassinari</title>
+		<script is:inline>
+			(() => {
+				try {
+					const saved = localStorage.getItem('theme');
+					const prefersDark = window.matchMedia(
+						'(prefers-color-scheme: dark)',
+					).matches;
+					if (saved === 'dark' || (!saved && prefersDark)) {
+						document.documentElement.classList.add('dark');
+					}
+				} catch (_) {}
+			})();
+		</script>
+		<style>
+			.notFoundCode {
+				font-size: 13px;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+				color: var(--fg-muted);
+				margin: 0 0 16px;
+			}
+
+			.notFoundTitle {
+				font-size: 28px;
+				font-weight: 500;
+				letter-spacing: -0.01em;
+				margin: 0 0 4px;
+				color: var(--fg);
+			}
+
+			@media (min-width: 640px) {
+				.notFoundTitle {
+					font-size: 32px;
+				}
+			}
+
+			.notFoundBody {
+				font-size: 15px;
+				line-height: 1.7;
+				color: var(--fg-subtle);
+				margin: 0 0 20px;
+			}
+
+			.notFoundLink {
+				display: inline-flex;
+				align-items: center;
+				font-size: 14px;
+				font-weight: 500;
+				color: var(--fg);
+				border-radius: 6px;
+				padding: 4px 8px;
+				margin-left: -8px;
+				transition: background-color 150ms ease;
+			}
+
+			.notFoundLink:hover,
+			.notFoundLink:focus-visible {
+				background: var(--zinc-100);
+				outline: none;
+			}
+
+			html.dark .notFoundLink:hover,
+			html.dark .notFoundLink:focus-visible {
+				background: var(--zinc-800);
+			}
+
+			.notFoundFooter {
+				margin-top: 64px;
+				font-size: 13px;
+				color: var(--fg-muted);
+			}
+		</style>
+	</head>
+	<body>
+		<main class="page">
+			<p class="notFoundCode">404 — Not found</p>
+			<h1 class="notFoundTitle">This page doesn&apos;t exist</h1>
+			<p class="notFoundBody">
+				The link may be broken, or the page may have been moved.
+			</p>
+			<a href="/" class="notFoundLink">← Back home</a>
+			<footer class="notFoundFooter">
+				© A playground to test different vibe coding tools.
+			</footer>
+		</main>
+	</body>
+</html>

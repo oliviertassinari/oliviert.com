@@ -5,12 +5,14 @@
 }
 
 .heroAvatar {
+  display: block;
   width: 80px;
   height: 80px;
   border-radius: 999px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   background: var(--zinc-100);
+  transition: box-shadow 100ms ease;
 }
 
 .heroAvatar img {
@@ -18,6 +20,100 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.avatarBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 200ms ease;
+}
+
+:global(.dark) .avatarBackdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.avatarBackdrop[data-starting-style],
+.avatarBackdrop[data-ending-style] {
+  opacity: 0;
+}
+
+.avatarPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(480px, 80vw);
+  height: min(480px, 80vw);
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.avatarPopup[data-starting-style],
+.avatarPopup[data-ending-style] {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.avatarImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.avatarImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  outline-offset: 0px;
+  transition:
+    background-color 100ms ease,
+    outline-offset 100ms ease,
+    outline-color 100ms ease,
+    box-shadow 100ms ease;
+}
+
+:global(.dark) .avatarClose {
+  background: var(--zinc-800);
+}
+
+.avatarClose:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+:global(.dark) .avatarClose:hover {
+  background: var(--zinc-700);
+}
+
+.avatarClose:focus-visible {
+  box-shadow: none;
+  outline: 1.5px solid transparent;
+  outline-offset: 2px;
+  outline-color: var(--bg);
+}
+
+:global(.dark) .avatarClose:focus-visible {
+  outline-width: 2px;
+  outline-color: var(--fg);
 }
 
 .heroName {
@@ -74,18 +170,16 @@
   border-radius: 8px;
   color: var(--fg-subtle);
   transition:
-    background-color 150ms ease,
-    color 150ms ease;
+    background-color 100ms ease,
+    color 100ms ease,
+    box-shadow 100ms ease;
 }
 
-.SocialLink:hover,
-.SocialLink:focus-visible {
+.SocialLink:hover {
   background: var(--zinc-100);
   color: var(--fg);
-  outline: none;
 }
 
-:global(.dark) .SocialLink:hover,
-:global(.dark) .SocialLink:focus-visible {
+:global(.dark) .SocialLink:hover {
   background: var(--zinc-800);
 }

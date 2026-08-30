@@ -1,6 +1,14 @@
 import * as React from 'react';
 import { Tooltip } from '@base-ui/react/tooltip';
-import { GithubIcon, TwitterIcon, LinkedInIcon, MapPinIcon, BriefcaseIcon } from './icons';
+import { Dialog } from '@base-ui/react/dialog';
+import {
+  GithubIcon,
+  TwitterIcon,
+  LinkedInIcon,
+  MapPinIcon,
+  BriefcaseIcon,
+  CloseIcon,
+} from './icons';
 import styles from './Hero.module.css';
 import { getCloudflareImage, getSrcSet } from '../utils';
 
@@ -10,20 +18,46 @@ const socials = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/oliviertassinari/', Icon: LinkedInIcon },
 ];
 
-export default function Hero() {
-  const avatarUrl = 'https://avatars.githubusercontent.com/u/3165635';
+const avatarUrl = 'https://avatars.githubusercontent.com/u/3165635';
 
+export default function Hero() {
   return (
     <header className={styles.Hero}>
-      <div className={styles.heroAvatar} aria-hidden="true">
-        <img
-          src={getCloudflareImage(avatarUrl, 80)}
-          srcSet={getSrcSet(avatarUrl, 80)}
-          alt=""
-          width="80"
-          height="80"
-        />
-      </div>
+      <link
+        rel="preload"
+        as="image"
+        href={getCloudflareImage(avatarUrl, 480)}
+        imageSrcSet={getSrcSet(avatarUrl, 480)}
+        fetchPriority="low"
+      />
+      <Dialog.Root>
+        <Dialog.Trigger className={styles.heroAvatar} aria-label="Open photo of Olivier Tassinari">
+          <img
+            src={getCloudflareImage(avatarUrl, 80)}
+            srcSet={getSrcSet(avatarUrl, 80)}
+            alt=""
+            width="80"
+            height="80"
+          />
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Backdrop className={styles.avatarBackdrop} />
+          <Dialog.Popup className={styles.avatarPopup} aria-label="Photo of Olivier Tassinari">
+            <div className={styles.avatarImage}>
+              <img
+                src={getCloudflareImage(avatarUrl, 480)}
+                srcSet={getSrcSet(avatarUrl, 480)}
+                alt="Olivier Tassinari"
+                width="480"
+                height="480"
+              />
+            </div>
+            <Dialog.Close className={styles.avatarClose} aria-label="Close">
+              <CloseIcon size={18} />
+            </Dialog.Close>
+          </Dialog.Popup>
+        </Dialog.Portal>
+      </Dialog.Root>
       <h1 className={styles.heroName}>Olivier Tassinari</h1>
       <p className={styles.heroTagline}>Building UI tooling.</p>
       <ul className={styles.heroMeta}>

@@ -76,6 +76,7 @@ a {
   color: inherit;
   text-decoration: none;
   transition: box-shadow 150ms ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -87,6 +88,7 @@ button {
   cursor: pointer;
   padding: 0;
   transition: box-shadow 150ms ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Custom focus-visible ring: a light/dark two-tone box-shadow instead of the native outline */

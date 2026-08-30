@@ -96,16 +96,18 @@
   background: var(--zinc-800);
 }
 
-.avatarClose:hover {
-  background: rgba(0, 0, 0, 0.6);
+@media (hover: hover) and (pointer: fine) {
+  .avatarClose:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  :global(.dark) .avatarClose:hover {
+    background: var(--zinc-700);
+  }
 }
 
 .avatarClose:active {
   background: var(--zinc-900);
-}
-
-:global(.dark) .avatarClose:hover {
-  background: var(--zinc-700);
 }
 
 :global(.dark) .avatarClose:active {
@@ -183,18 +185,20 @@
     box-shadow 100ms ease;
 }
 
-.SocialLink:hover {
-  background: var(--zinc-100);
-  color: var(--fg);
+@media (hover: hover) and (pointer: fine) {
+  .SocialLink:hover {
+    background: var(--zinc-100);
+    color: var(--fg);
+  }
+
+  :global(.dark) .SocialLink:hover {
+    background: var(--zinc-800);
+  }
 }
 
 .SocialLink:active {
   background: var(--zinc-200);
   color: var(--fg);
-}
-
-:global(.dark) .SocialLink:hover {
-  background: var(--zinc-800);
 }
 
 :global(.dark) .SocialLink:active {

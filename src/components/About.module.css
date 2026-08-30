@@ -21,7 +21,12 @@
   border-radius: 3px;
 }
 
-.aboutLink:hover,
+@media (hover: hover) and (pointer: fine) {
+  .aboutLink:hover {
+    text-decoration-color: var(--fg);
+  }
+}
+
 .aboutLink:active {
   text-decoration-color: var(--fg);
 }
@@ -50,16 +55,18 @@
     box-shadow 150ms ease;
 }
 
-.AboutToggle:hover {
-  background: var(--zinc-100);
+@media (hover: hover) and (pointer: fine) {
+  .AboutToggle:hover {
+    background: var(--zinc-100);
+  }
+
+  :global(.dark) .AboutToggle:hover {
+    background: var(--zinc-800);
+  }
 }
 
 .AboutToggle:active {
   background: var(--zinc-200);
-}
-
-:global(.dark) .AboutToggle:hover {
-  background: var(--zinc-800);
 }
 
 :global(.dark) .AboutToggle:active {

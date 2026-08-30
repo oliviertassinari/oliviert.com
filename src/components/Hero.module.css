@@ -25,7 +25,7 @@
 .avatarBackdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   transition: opacity 200ms ease;
 }
 
@@ -100,8 +100,16 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
+.avatarClose:active {
+  background: var(--zinc-900);
+}
+
 :global(.dark) .avatarClose:hover {
   background: var(--zinc-700);
+}
+
+:global(.dark) .avatarClose:active {
+  background: var(--zinc-600);
 }
 
 .avatarClose:focus-visible {
@@ -180,6 +188,15 @@
   color: var(--fg);
 }
 
+.SocialLink:active {
+  background: var(--zinc-200);
+  color: var(--fg);
+}
+
 :global(.dark) .SocialLink:hover {
   background: var(--zinc-800);
+}
+
+:global(.dark) .SocialLink:active {
+  background: var(--zinc-700);
 }

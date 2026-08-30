@@ -21,7 +21,8 @@
   border-radius: 3px;
 }
 
-.aboutLink:hover {
+.aboutLink:hover,
+.aboutLink:active {
   text-decoration-color: var(--fg);
 }
 
@@ -53,8 +54,16 @@
   background: var(--zinc-100);
 }
 
+.AboutToggle:active {
+  background: var(--zinc-200);
+}
+
 :global(.dark) .AboutToggle:hover {
   background: var(--zinc-800);
+}
+
+:global(.dark) .AboutToggle:active {
+  background: var(--zinc-700);
 }
 
 .aboutToggleHide {

@@ -16,6 +16,52 @@ import '../styles/global.css';
 			name="description"
 			content="Olivier Tassinari is CEO & Co-founder at MUI."
 		/>
+    <script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@type": "Person",
+						"@id": "https://oliviert.com/#person",
+						"name": "Olivier Tassinari",
+						"url": "https://oliviert.com/",
+						"image": "https://oliviert.com/olivier.jpg",
+						"jobTitle": "CEO & Co-founder at MUI",
+						"description": "Building UI tooling.",
+						"worksFor": { "@id": "https://mui.com/#organization" },
+						"knowsAbout": ["React", "User interfaces", "Open source", "Design systems"],
+						"sameAs": [
+							"https://github.com/oliviertassinari",
+							"https://x.com/olivtassinari",
+							"https://www.linkedin.com/in/olivier-tassinari/"
+						]
+					},
+					{
+						"@type": "Organization",
+						"@id": "https://mui.com/#organization",
+						"name": "MUI",
+						"url": "https://mui.com/"
+					},
+					{
+						"@type": "WebSite",
+						"@id": "https://oliviert.com/#website",
+						"url": "https://oliviert.com/",
+						"name": "Olivier Tassinari",
+						"inLanguage": "en",
+						"publisher": { "@id": "https://oliviert.com/#person" }
+					},
+					{
+						"@type": "ProfilePage",
+						"@id": "https://oliviert.com/#webpage",
+						"url": "https://oliviert.com/",
+						"name": "Olivier Tassinari — Building UI tooling",
+						"isPartOf": { "@id": "https://oliviert.com/#website" },
+						"about": { "@id": "https://oliviert.com/#person" },
+						"mainEntity": { "@id": "https://oliviert.com/#person" }
+					}
+				]
+			}
+		</script>
 		<script is:inline>
 			(() => {
 				try {

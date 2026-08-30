@@ -3,7 +3,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prettier": "pretty-quick --ignore-path .lintignore --branch master",
+    "prettier:all": "prettier --write . --ignore-path .lintignore"
   },
   "dependencies": {
     "@astrojs/react": "^6.0.4",
@@ -11,6 +13,8 @@
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "astro": "^7.2.9",
+    "prettier": "^3.9.6",
+    "pretty-quick": "^4.2.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   }

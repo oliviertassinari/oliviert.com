@@ -10,7 +10,7 @@ export default function About() {
 			<div className={styles.aboutBody}>
 				<p>
 					I&apos;ve spent the last decade building UI tooling. I
-					co-founded <strong>MUI</strong>, where we maintain Base UI, Material UI, and MUI X — libraries used by millions of developers and
+					co-founded <strong>MUI</strong>, where we maintain <a href="https://base-ui.com/" target="_blank" className={styles.aboutLink}>Base UI</a>, <a href="https://mui.com/material-ui/" target="_blank" className={styles.aboutLink}>Material UI</a>, and MUI X — libraries used by millions of developers and
 					thousands of companies to ship interfaces.
 				</p>
 				<Collapsible.Root>

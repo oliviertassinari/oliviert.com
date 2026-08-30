@@ -13,6 +13,21 @@
 	font-weight: 600;
 }
 
+.aboutLink {
+	color: var(--fg);
+	text-decoration: underline;
+	text-decoration-color: var(--zinc-300);
+	text-underline-offset: 2px;
+}
+
+.aboutLink:hover {
+	text-decoration-color: var(--fg);
+}
+
+:global(.dark) .aboutLink {
+	text-decoration-color: var(--zinc-700);
+}
+
 .aboutExtra {
 	padding-top: 4px;
 }

@@ -83,7 +83,7 @@ export default function Hero() {
                       aria-label={label}
                       className={styles.SocialLink}
                     >
-                      <Icon size={18} />
+                      <Icon size={16} />
                     </a>
                   }
                 />
